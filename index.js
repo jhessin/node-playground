@@ -1,13 +1,12 @@
 // index.js
 
-let lodash = require('lodash');
-let capitalString =
-  lodash.capitalize('hello world!');
-// console.log(capitalString); // Hello world!
+const express = require('express');
+const app = express();
 
-const fs = require('fs');
+app.get('/', (req, res) => {
+  res.send('Hello there!');
+})
 
-fs.writeFile('hello.txt', 'Hey there world', err => {
-  if (err) throw err;
-  console.log('successfully saved');
-});
+app.listen(3000, () => {
+  console.log('App is listening on port 3000');
+})
